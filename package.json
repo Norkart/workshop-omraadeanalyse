@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "global": "^4.4.0",
+    "leaflet": "^1.7.1",
+    "leaflet-webatlastile": "^2.1.0",
     "parcel-bundler": "^1.12.5"
   },
   "name": "workshop-omraadeanalyse",

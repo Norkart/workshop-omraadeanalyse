@@ -1,43 +1,50 @@
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import {
+    webatlasTileLayer,
+    WebatlasTileLayerTypes,
+} from "leaflet-webatlastile";
+
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
 var map = L.map('mapid').setView([58.14615, 7.99573], 13);
 
 var apiKey = '';
 
 var baseLayers = {
-    'Kart': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.VECTOR,
-        apikey: apiKey
+    'Kart': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.VECTOR,
+        apiKey: apiKey
     }).addTo(map),
-    'Kart, Gråtone': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.GREY,
-        apikey: apiKey
+    'Kart, Gråtone': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.GREY,
+        apiKey: apiKey
     }),
-    'Kart, medium': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.MEDIUM,
-        apikey: apiKey
+    'Kart, medium': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.MEDIUM,
+        apiKey: apiKey
     }),
-    'Kart, lite': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.LITE,
-        apikey: apiKey
+    'Kart, lite': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.LITE,
+        apiKey: apiKey
     }),
-    'Foto': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.AERIAL,
-        apikey: apiKey
+    'Foto': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.AERIAL,
+        apiKey: apiKey
     }),
-    'Hybrid': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.HYBRID,
-        apikey: apiKey
+    'Hybrid': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.HYBRID,
+        apiKey: apiKey
     }),
-    'Custom-Kart': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.VECTOR, //This is a constant with value 'vector'
-        apikey: apiKey,
+    'Custom-Kart': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.VECTOR, //This is a constant with value 'vector'
+        apiKey: apiKey,
         tileset: {
             vector: {tileset: 'webatlas-1881-vektor', ext: 'png'} //We overwrite the default vector map with a custom tileset (also available on the same server)
         }
     }),
-    'Custom-Hybrid': L.tileLayer.webatlas({
-        mapType: L.TileLayer.Webatlas.Type.HYBRID, //This is a constant with value 'hybrid'
-        apikey: apiKey,
+    'Custom-Hybrid': webatlasTileLayer({
+        mapType: WebatlasTileLayerTypes.HYBRID, //This is a constant with value 'hybrid'
+        apiKey: apiKey,
         tileset: {
             hybrid: {tileset: 'webatlas-1881-hybrid', ext: 'jpeg'} //We overwrite the default hybrid map with a custom tileset (also available on the same server)
         }
@@ -45,17 +52,3 @@ var baseLayers = {
 };
 
 L.control.layers(baseLayers, {}).addTo(map);
-
-
-/** All available map types
-L.TileLayer.Webatlas.Type.GREY
-L.TileLayer.Webatlas.Type.VECTOR
-L.TileLayer.Webatlas.Type.MEDIUM
-L.TileLayer.Webatlas.Type.LITE
-L.TileLayer.Webatlas.Type.AERIAL
-L.TileLayer.Webatlas.Type.HYBRID
-*/
-
-/****
-Looking for Mapbox vector tiles for the Norwegian maps? Reach out at info@norkart.no for some amazing vector tile action
-****/
