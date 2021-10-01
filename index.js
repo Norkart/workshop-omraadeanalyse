@@ -1,7 +1,7 @@
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
 var map = L.map('mapid').setView([58.14615, 7.99573], 13);
 
-var apiKey = ''; //DO NOT USE THIS KEY: DEMO ONLY. Log in at developer.norkart.no to get a trial api-key.
+var apiKey = '';
 
 var baseLayers = {
     'Kart': L.tileLayer.webatlas({
