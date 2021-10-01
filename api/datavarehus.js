@@ -1,7 +1,7 @@
 
 var dvhToken = ''; 
 
-export async function intersectrionByCoordinate(lat, lng, id) {
+export async function intersectionByCoordinate(lat, lng, id) {
     const query = `https://datavarehus.api.norkart.no/v2/datasets/features/coordinatequery`;
     const res = await fetch(query, {
         method: 'POST',

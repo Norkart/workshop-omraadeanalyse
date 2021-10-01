@@ -5,7 +5,7 @@ import {
     WebatlasTileLayerTypes,
 } from "leaflet-webatlastile";
 
-import { intersectrionByCoordinate } from './api/datavarehus';
+import { intersectionByCoordinate } from './api/datavarehus';
 import { setCurrentMapFeature } from './state/mapfeature';
 import { removeMapFeatureIfExists } from './utils/maputil';
 
@@ -61,7 +61,7 @@ L.control.layers(baseLayers, {}).addTo(map);
 async function onMapClick(e) {
 
     var dataset = '72'; //Radon
-    var res = await intersectrionByCoordinate(e.latlng.lat, e.latlng.lng, dataset); //Dvh call 
+    var res = await intersectionByCoordinate(e.latlng.lat, e.latlng.lng, dataset); //Dvh call 
     
     if(res.features.length != 0){
         removeMapFeatureIfExists();
