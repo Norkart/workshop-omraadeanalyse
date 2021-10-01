@@ -6,6 +6,9 @@
     "parcel-bundler": "^1.12.5"
   },
   "name": "workshop-omraadeanalyse",
+  "browserslist":[
+    "last 1 Chrome versions"
+  ],
   "type": "module",
   "version": "1.0.0",
   "main": "index.js",
