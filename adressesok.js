@@ -27,12 +27,7 @@ autocomplete.oninput = async function () {
 
     const res = await fetch(request);
     const jsonResponse = await res.json();
-    console.log(jsonResponse);
-    const results = [];
-    for (i = 0; i < jsonResponse.Options.length; i++) {
-        results.push(jsonResponse.Options[i].Text);
-    }
-    return results;
+    return jsonResponse.map(option => option.Text);
   }
 
   resultsHTML.onclick = async function (event) {
