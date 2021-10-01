@@ -21,13 +21,25 @@
 
  <body>
    <h2> Områdeanalyse </h2><br>
-  <!-- This is the container for the map-->
+
+  <div class="autocomplete" style="width:300px;">
+  <input type="text" id="autocomplete" placeholder="Søk etter en adresse"></input>
+    <ul id="results"></ul>
+  </div>
+
+</form>
+
+
+
+    <!-- This is the container for the map-->
   <div id="mapid"></div>
 
   <!-- Load Norkart's Leaflet plugin for Maptiles: L.TileLayer.Webatlas
   Use the latest version at: https://github.com/Norkart/L.TileLayer.Webatlas -->
   <script src="https://cdn.jsdelivr.net/gh/norkart/L.TileLayer.Webatlas/L.TileLayer.Webatlas.min.js"></script>
   <script type="text/javascript" src="map.js"></script>
+  <script type="text/javascript" src="adressesok.js"></script>
+  
 
 </body>
 
