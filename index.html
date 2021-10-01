@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html>
-
+<html style="height: 100%;">
  <head>
       <meta charset="utf-8" />
+      <title>Norkart workshop: Områdeanalyse</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
 
-<title>Norkart workshop: Områdeanalyse</title>
-
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-   crossorigin=""/>
-
-<link rel="stylesheet" href="map.css"/>
-
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
-   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
-   crossorigin=""></script>
-
+      <!-- Make sure you put this AFTER Leaflet's CSS -->
+      <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+      integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+      crossorigin=""></script>
  </head>
+ <body style="height: 100%;">
+    <h2> Områdeanalyse </h2><br>
+    <!-- This is the container for the map-->
+    <div id="mapid" style="width: 100%; height: 80%;"></div>
 
- <body>
-   <h2> Områdeanalyse </h2><br>
-  <!-- This is the container for the map-->
-  <div id="mapid"></div>
-
-  <!-- Load Norkart's Leaflet plugin for Maptiles: L.TileLayer.Webatlas
-  Use the latest version at: https://github.com/Norkart/L.TileLayer.Webatlas -->
-  <script src="https://cdn.jsdelivr.net/gh/norkart/L.TileLayer.Webatlas/L.TileLayer.Webatlas.min.js"></script>
-  <script type="text/javascript" src="map.js"></script>
-
+    <!-- Load Norkart's Leaflet plugin for Maptiles: L.TileLayer.Webatlas
+    Use the latest version at: https://github.com/Norkart/L.TileLayer.Webatlas -->
+    <script src="https://cdn.jsdelivr.net/gh/norkart/L.TileLayer.Webatlas/L.TileLayer.Webatlas.min.js"></script>
+    <script src="index.js"></script>
 </body>
-
 </html>
