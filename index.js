@@ -1,19 +1,20 @@
-import L from "leaflet";
+import L from 'leaflet';
+import 'leaflet-draw';
 import "leaflet/dist/leaflet.css";
 import {
     webatlasTileLayer,
     WebatlasTileLayerTypes,
 } from "leaflet-webatlastile";
 
-import { intersectionByCoordinate } from './api/datavarehus';
-import { setCurrentMapFeature } from './state/mapfeature';
-import { removeMapFeatureIfExists } from './utils/maputil';
+
+import { setCurrentMap, map } from './state/map';
+import { addGeoJson } from './utils/map';
+import { runIntersection } from './utils/datavarehus';
 
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
-var map = L.map('mapid').setView([58.14615, 7.99573], 13);
+setCurrentMap(L.map('mapid').setView([58.14615, 7.99573], 13));
 
 var apiKey = '';
-
 var baseLayers = {
     'Kart': webatlasTileLayer({
         mapType: WebatlasTileLayerTypes.VECTOR,
@@ -57,25 +58,35 @@ var baseLayers = {
 
 L.control.layers(baseLayers, {}).addTo(map);
 
-
-async function onMapClick(e) {
-
-    var dataset = '72'; //Radon
-    var res = await intersectionByCoordinate(e.latlng.lat, e.latlng.lng, dataset); //Dvh call 
-    
-    if(res.features.length != 0){
-        removeMapFeatureIfExists();
-        var featureRes = L.geoJSON(res).bindPopup(function (layer) {
-            return `Treff på radon: ${layer.feature.properties.aktso_navn}`;
-        }).addTo(map);
-        setCurrentMapFeature(featureRes);
+// Enable map drawing
+var editableLayers = new L.FeatureGroup();
+map.addLayer(editableLayers);
+var options = {
+    position: 'topright',
+    draw: {
+        marker: false,
+        polyline: false,
+        polygon: {
+            allowIntersection: false, // Restricts shapes to simple polygons
+            drawError: {
+                color: '#e1e100', // Color the shape will turn when intersects
+                message: 'We dont like polygons with self intersecrtion!' // Message that will show when intersect
+            },
+            shapeOptions: {
+                color: '#bada55'
+            }
+        },
+        circlemarker: false,
+        circle: false,
+        rectangle: false
     }
-    else
-    {
-        removeMapFeatureIfExists();
-        L.popup().setLatLng(e.latlng).setContent('No radon over here').openOn(map);
-    }
-}
-map.on('click', onMapClick);
+};
 
+L.drawLocal.draw.toolbar.buttons.polygon = 'Draw';
+var drawControl = new L.Control.Draw(options);
+map.addControl(drawControl);
+
+map.on(L.Draw.Event.CREATED, function (e) {
+    addGeoJson(e.layer.toGeoJSON(), "Run your intersectionquery on this polygon!");
+});
 

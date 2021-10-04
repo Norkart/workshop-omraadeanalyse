@@ -9,11 +9,11 @@
  </head>
  <body style="height: 100%;">
     <h2> Områdeanalyse </h2><br>
+
+    <button onclick="removeMapFeatureIfExists()">Remove map layers</button>  
+    <button onclick="runIntersection()">Run Intersectionquery</button>
     <!-- This is the container for the map-->
     <div id="mapid" style="width: 100%; height: 80%;"></div>
-
-    <!-- Load Norkart's Leaflet plugin for Maptiles: L.TileLayer.Webatlas
-    Use the latest version at: https://github.com/Norkart/L.TileLayer.Webatlas -->
     <script src="index.js"></script>
 </body>
 </html>
