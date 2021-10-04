@@ -5,6 +5,8 @@ import {
     WebatlasTileLayerTypes,
 } from "leaflet-webatlastile";
 
+import { getResults } from "./adressesok";
+
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
 var map = L.map('mapid').setView([58.14615, 7.99573], 13);
 
@@ -52,3 +54,33 @@ var baseLayers = {
 };
 
 L.control.layers(baseLayers, {}).addTo(map);
+
+var results = [];
+
+const autocomplete = document.getElementById("autocomplete");
+const resultsHTML = document.getElementById("searchResults");
+const searchResultHTML = document.getElementById("result");
+
+autocomplete.oninput = async function () {
+  const userInput = this.value;
+  if (userInput.length > 0) {
+    results = await getResults(userInput, apiKey);
+    resultsHTML.innerHTML = results.map(res => "<li>" + res.Text + "</li>").join("");
+  }
+};
+
+resultsHTML.onclick = async function (event) {
+    const setValue = event.target.innerText;
+    autocomplete.value = setValue;
+    const adresse = results.filter(res => res.Text == setValue)[0];
+    const latitude = adresse.PayLoad.Posisjon.Y;
+    const longitude = adresse.PayLoad.Posisjon.X;
+
+    map.setView([latitude, longitude], 13);
+
+    searchResultHTML.innerHTML = "<p>Navn: " + adresse.PayLoad.Text + "</p>";
+    searchResultHTML.innerHTML += "<p>Eiendomsident: " + adresse.PayLoad.AdresseMatrikkelNummer + "</p>";
+    searchResultHTML.innerHTML += "<p>Latitude " + latitude + "</p>";
+    searchResultHTML.innerHTML += "<p>Longitude " + longitude + "</p>";
+    this.innerHTML = "";
+};
