@@ -5,7 +5,7 @@ import {
     WebatlasTileLayerTypes,
 } from "leaflet-webatlastile";
 
-import { getResults } from "./adressesok";
+import { getResults } from "./api/adressesok";
 
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
 var map = L.map('mapid').setView([58.14615, 7.99573], 13);
