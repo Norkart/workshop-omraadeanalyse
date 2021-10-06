@@ -75,7 +75,7 @@ const datasets = {
 
 [leaflet]: https://leafletjs.com
 [leaflet-draw]: http://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html
-[matrikkelkart]: https://www.webatlas.no/WAAPI-Matrikkelkart/swagger-ui
+[matrikkelkart]: https://www.webatlas.no/WAAPI-Matrikkelkart/swagger-ui/
 [datavarehus]: https://www.webatlas.no/WAAPI-Datavarehus/swagger-ui/
 [turf]: https://turfjs.org
 [fritekst]: https://github.com/Norkart/API-documentation/tree/main/code_and_tutorials/getting%20started%20-%20fritekstsok
