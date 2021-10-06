@@ -8,7 +8,7 @@ import {
 } from "leaflet-webatlastile";
 
 import { setCurrentMap, map } from "./state/map";
-import { addGeoJson } from "./utils/map";
+import { addGeoJson, removeMapFeatureIfExists } from "./utils/map";
 import { runIntersection } from "./utils/datavarehus";
 
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
@@ -59,3 +59,7 @@ map.on(L.Draw.Event.CREATED, function (e) {
     "Run your intersectionquery on this polygon!"
   );
 });
+
+document.getElementById("remove_layers").onclick = removeMapFeatureIfExists;
+
+document.getElementById("run_intersection").onclick = runIntersection;
