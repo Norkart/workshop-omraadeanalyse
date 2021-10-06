@@ -2,11 +2,11 @@
 Workshop for Linjeforeningen Hybrida 6/10-2021
 
 ## Komme i gang:
-1. Klon prosjektet
+1. Klon prosjektet ```git clone https://github.com/Norkart/workshop-omraadeanalyse.git && cd Norkart/workshop-omraadeanalyse```
 2. Installer yarn: ```npm install -g yarn```
 3. Installer pakker: ```yarn```
 4. Kjør opp prosjektet med ```yarn dev```
-
+5. Nå kan du editere koden, ta utgangspunkt i src/index.js
 
 ## Oppgave
 
