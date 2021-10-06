@@ -26,9 +26,14 @@ Forbedringer
 1. La bruker definere en buffer rundt valgt område (tips: [Turf.js][turf])
 
 
+## Hjelp
+- [Norkart API dokumentasjon][api-documentation]
+
 
 
 [leaflet-draw]: http://leaflet.github.io/Leaflet.draw/docs/leaflet-draw-latest.html
 [matrikkelkart]: https://www.webatlas.no/WAAPI-Matrikkelkart/swagger-ui
 [datavarehus]: https://www.webatlas.no/WAAPI-Datavarehus/swagger-ui/
 [turf]: https://turfjs.org
+[api-documentation]: https://github.com/Norkart/API-documentation
+
