@@ -6,7 +6,7 @@ import { map, currentMapFeature } from '../state/map';
 export var runIntersection = async() => {
     if(currentMapFeature){
         var geom = currentMapFeature.toGeoJSON().features[0].geometry;
-        var res = await intersectionByGeometry(geom, '25'); //Dvh call dataset 25 is the speed limit dataset.
+        var res = await intersectionByGeometry(geom, 'sv_svv_24_aadt');
         if(res.features.length != 0){
             removeMapFeatureIfExists();
             addGeoJson(res, null);

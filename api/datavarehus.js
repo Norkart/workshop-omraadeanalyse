@@ -1,13 +1,13 @@
 
-var dvhToken = ''; 
+import { apiKey } from "../index";
 
 export var intersectionByGeometry = async(geom, id) => {
-  const query = `https://datavarehus.api.norkart.no/v2/datasets/features/intersectionquery`;
+  const query = `https://datavarehus.api.norkart.no/v2/views/features/intersectionquery`;
   const res = await fetch(query, {
       method: 'POST',
       headers: {
         Accept: 'application/json, */*',
-        'X-WAAPI-TOKEN': `${dvhToken}`,
+        'X-WAAPI-TOKEN': `${apiKey}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({'ids' : [id], 'geometry': geom, 'mapAttributes': false, 'clipBuffer': 0 }),

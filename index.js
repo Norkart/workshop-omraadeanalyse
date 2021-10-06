@@ -14,7 +14,7 @@ import { runIntersection } from './utils/datavarehus';
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
 setCurrentMap(L.map('mapid').setView([58.14615, 7.99573], 13));
 
-var apiKey = '';
+export var apiKey = '';
 var baseLayers = {
     'Kart': webatlasTileLayer({
         mapType: WebatlasTileLayerTypes.VECTOR,
