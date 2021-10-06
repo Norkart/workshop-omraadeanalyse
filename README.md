@@ -24,7 +24,7 @@ Kort fortalt:
 
 Forbedringer
 1. La bruker definere en buffer rundt valgt område (tips: [Turf.js][turf])
-
+2. Legg inn et søkefelt for å la bruker finne adresser (tips: [fritekstsøk][fritekst])
 
 
 
@@ -32,3 +32,4 @@ Forbedringer
 [matrikkelkart]: https://www.webatlas.no/WAAPI-Matrikkelkart/swagger-ui
 [datavarehus]: https://www.webatlas.no/WAAPI-Datavarehus/swagger-ui/
 [turf]: https://turfjs.org
+[fritekst]: https://github.com/Norkart/API-documentation/tree/main/code_and_tutorials/getting%20started%20-%20fritekstsok
