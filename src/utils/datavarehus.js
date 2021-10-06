@@ -3,10 +3,10 @@ import { intersectionByGeometry } from "../api/datavarehus";
 import { removeMapFeatureIfExists, addGeoJson } from "./map";
 import { map, currentMapFeature } from "../state/map";
 
-export var runIntersection = async () => {
+export const runIntersection = async () => {
   if (currentMapFeature) {
-    var geom = currentMapFeature.toGeoJSON().features[0].geometry;
-    var res = await intersectionByGeometry(geom, "sv_svv_24_aadt");
+    const geom = currentMapFeature.toGeoJSON().features[0].geometry;
+    const res = await intersectionByGeometry(geom, "sv_svv_24_aadt");
     if (res.features.length != 0) {
       removeMapFeatureIfExists();
       addGeoJson(res, null);

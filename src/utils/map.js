@@ -10,16 +10,17 @@ export var removeMapFeatureIfExists = () => {
 
 export var addGeoJson = (geojson, popuptextoverride) => {
   removeMapFeatureIfExists();
-  var featureRes = L.geoJSON(geojson)
-    .bindPopup(
-      function (feature) {
-        if (popuptextoverride) {
-          return popuptextoverride;
-        }
-        return `${JSON.stringify(feature?.feature.properties, null, 2)}`;
-      },
-      { maxHeight: 600, maxWidth: 600 }
-    )
-    .addTo(map);
-  setCurrentMapFeature(featureRes);
+  setCurrentMapFeature(
+    L.geoJSON(geojson)
+      .bindPopup(
+        function (feature) {
+          if (popuptextoverride) {
+            return popuptextoverride;
+          }
+          return `${JSON.stringify(feature?.feature.properties, null, 2)}`;
+        },
+        { maxHeight: 600, maxWidth: 600 }
+      )
+      .addTo(map)
+  );
 };

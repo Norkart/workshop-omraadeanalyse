@@ -1,10 +1,9 @@
+export let map;
+export const setCurrentMap = (newmap) => {
+  map = newmap;
+};
 
-export var map;
-export var setCurrentMap = (newmap) => {
-    map = newmap;
-}
-
-export var currentMapFeature;
-export var setCurrentMapFeature = (feature) => {
-    currentMapFeature = feature;
-}
+export let currentMapFeature;
+export const setCurrentMapFeature = (feature) => {
+  currentMapFeature = feature;
+};
