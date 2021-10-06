@@ -2,8 +2,8 @@ import L from 'leaflet';
 import 'leaflet-draw';
 import "leaflet/dist/leaflet.css";
 import {
-    webatlasTileLayer,
-    WebatlasTileLayerTypes,
+  webatlasTileLayer,
+  WebatlasTileLayerTypes,
 } from "leaflet-webatlastile";
 
 
@@ -14,47 +14,13 @@ import { runIntersection } from './utils/datavarehus';
 //Initiating Leaflet map and set the view to coordinates (in WGS84 / EPSG:3857) and zoom level 13
 setCurrentMap(L.map('mapid').setView([58.14615, 7.99573], 13));
 
+//Add a background layer, using Norkart Tiles
 export var apiKey = '';
-var baseLayers = {
+var baseLayers = { 
     'Kart': webatlasTileLayer({
         mapType: WebatlasTileLayerTypes.VECTOR,
-        apiKey: apiKey
-    }).addTo(map),
-    'Kart, Gråtone': webatlasTileLayer({
-        mapType: WebatlasTileLayerTypes.GREY,
-        apiKey: apiKey
-    }),
-    'Kart, medium': webatlasTileLayer({
-        mapType: WebatlasTileLayerTypes.MEDIUM,
-        apiKey: apiKey
-    }),
-    'Kart, lite': webatlasTileLayer({
-        mapType: WebatlasTileLayerTypes.LITE,
-        apiKey: apiKey
-    }),
-    'Foto': webatlasTileLayer({
-        mapType: WebatlasTileLayerTypes.AERIAL,
-        apiKey: apiKey
-    }),
-    'Hybrid': webatlasTileLayer({
-        mapType: WebatlasTileLayerTypes.HYBRID,
-        apiKey: apiKey
-    }),
-    'Custom-Kart': webatlasTileLayer({
-        mapType: WebatlasTileLayerTypes.VECTOR, //This is a constant with value 'vector'
         apiKey: apiKey,
-        tileset: {
-            vector: {tileset: 'webatlas-1881-vektor', ext: 'png'} //We overwrite the default vector map with a custom tileset (also available on the same server)
-        }
-    }),
-    'Custom-Hybrid': webatlasTileLayer({
-        mapType: WebatlasTileLayerTypes.HYBRID, //This is a constant with value 'hybrid'
-        apiKey: apiKey,
-        tileset: {
-            hybrid: {tileset: 'webatlas-1881-hybrid', ext: 'jpeg'} //We overwrite the default hybrid map with a custom tileset (also available on the same server)
-        }
-    })
-};
+    }).addTo(map) };
 
 L.control.layers(baseLayers, {}).addTo(map);
 
@@ -89,4 +55,6 @@ map.addControl(drawControl);
 map.on(L.Draw.Event.CREATED, function (e) {
     addGeoJson(e.layer.toGeoJSON(), "Run your intersectionquery on this polygon!");
 });
+
+
 
