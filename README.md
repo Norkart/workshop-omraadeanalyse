@@ -19,12 +19,33 @@ Kort fortalt:
    a. La bruker tegne et polygon i kartet (tips: [Leaflet.Draw][leaflet-draw])
    b. La bruker velge en eiendomsteig (tips: [WAAPI-Matrikkelkart][matrikkelkart])
 3. Sjekk hvilke datasett som toucher området, ved bruk av [WAAPI-Datavarehus][datavarehus], [Dokumentasjon][dvh_dok]
+   - [Liste over datasett](#datasett)
 4. Presenter resultatet. Her kan dere gjøre mye, muligheter: vise geometrier, vise attributter, etc
  
 
-Forbedringer
+## Forbedringer
 1. La bruker definere en buffer rundt valgt område (tips: [Turf.js][turf])
 2. Legg inn et søkefelt for å la bruker finne adresser (tips: [fritekstsøk][fritekst])
+
+## Nøkkel
+Nøkkel for tilgang til alle norkarts tjenester er 
+
+  ```48252c1a-f12b-4fb5-913c-a2f3c1cc0a9e```
+
+
+## Datasett
+
+Nøkkelen dere har fått git dere tilgang til 8 datasett i datavarehuset.
+
+- **sv_svv_24_aadt** -  Trafikkmengde fra Statens Vegvesen
+- **sv_ra_69_fredabygg** - Freda bygg fra Riksantikvaren
+- **sv_ra_49_tettetrehusmiljoe**  - Tette trehusmiljøer fra Riksantikvaren
+- **sv_nve_9_kvikkleiresone** - Kvikkleiresoner fra NVE
+- **sv_ngu_72_aktsomhetsomraade** - Radon aktsomhetsområde fra NGU
+- **sv_kartverket_206_markagrense** - Markagrense fra Kartverket
+- **sv_nibio_63_arealressursflate** - Dyrkbar jord fra NIBIO
+- **sv_miljodir_34_kartlagtfriluftslivsomraade** - Karlagte verdisatte friluftsområde fra Miljødirektoratet
+
 
 
 
