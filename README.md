@@ -35,7 +35,7 @@ Nøkkel for tilgang til alle norkarts tjenester er
 
 ## Datasett
 
-Nøkkelen dere har fått git dere tilgang til 8 datasett i datavarehuset.
+Nøkkelen dere har fått gir dere tilgang til 8 datasett i datavarehuset.
 
 - **sv_svv_24_aadt** -  Trafikkmengde fra Statens Vegvesen
 - **sv_ra_69_fredabygg** - Freda bygg fra Riksantikvaren
