@@ -18,7 +18,7 @@ Kort fortalt:
 2. Velg område å undersøke
    a. La bruker tegne et polygon i kartet (tips: [Leaflet.Draw][leaflet-draw])
    b. La bruker velge en eiendomsteig (tips: [WAAPI-Matrikkelkart][matrikkelkart])
-3. Sjekk hvilke datasett som toucher området, ved bruk av [WAAPI-Datavarehus][datavarehus]
+3. Sjekk hvilke datasett som toucher området, ved bruk av [WAAPI-Datavarehus][datavarehus], [Dokumentasjon][dvh_dok]
 4. Presenter resultatet. Her kan dere gjøre mye, muligheter: vise geometrier, vise attributter, etc
  
 
@@ -33,3 +33,4 @@ Forbedringer
 [datavarehus]: https://www.webatlas.no/WAAPI-Datavarehus/swagger-ui/
 [turf]: https://turfjs.org
 [fritekst]: https://github.com/Norkart/API-documentation/tree/main/code_and_tutorials/getting%20started%20-%20fritekstsok
+[dvh_dok]: https://github.com/Norkart/API-documentation/tree/main/API-datavarehus
